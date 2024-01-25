@@ -9,7 +9,7 @@ All tasks you can find by searching "task {#}: ...."
 
 ## Success
 
-1. All tasked in task-list.txt should be displayed and classified by status when accessing http://php82.local/lab03/
+1. All tasked in task-list.txt should be displayed and classified by status when accessing http://php82.local:9000/lab03/
 2. Be able to append a new task and status into `task-list.txt`.
 
 ## Grading
