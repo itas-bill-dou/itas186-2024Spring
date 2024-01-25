@@ -32,6 +32,26 @@ fopen or file_get_contents to get contents.
 use explode to convert a string to array.
 */
 
+$raw_tasks = [];
+
+// method 1 - fopen
+// Get file pointer resource
+$tasks_resource = fopen('./task-list.txt', 'r');
+
+// fopen: If the resource is not false
+if ($tasks_resource) {
+  while (($line = fgets($tasks_resource)) !== false) {
+    // Push current line into raw_tasks
+    array_push($raw_tasks, $line);
+  }
+}
+
+// method 2 - file_get_contents
+// $tasks_string = file_get_contents('./task-list.txt');
+// $raw_tasks = explode(PHP_EOL, $tasks_string);
+
+var_dump($raw_tasks);
+
 $normalizedTasks = [];
 
 ?>
