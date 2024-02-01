@@ -30,4 +30,4 @@ Receive form submission
 */
 ```
 
-Total: 90'
+Total: 100'
