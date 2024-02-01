@@ -26,11 +26,9 @@ if (!empty($_POST)) {
     "status" => $status
   ];
 
-  // Find next available key value
-
   // append it as a single line at the end of task-list.txt
   $taskLine = implode("|", $newTask);
-  if (!file_put_contents('task-list.txt', $taskLine, FILE_APPEND) != false) {
+  if (!file_put_contents('task-list.txt', PHP_EOL . $taskLine, FILE_APPEND) != false) {
     echo "Something wrong.";
     exit;
   } else {

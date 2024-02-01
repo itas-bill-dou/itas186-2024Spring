@@ -57,13 +57,16 @@ if (file_exists("./task-list.txt")) {
       <?php
       /* 
       task 1 (15' total):
-      1. Add a button/anchor named "Edit" on right side of "not done" tasks. (3')
+      1. Add 2 buttons/anchors named "Edit" and "Delete" on right side of "not done" tasks. (3')
+      tip: If you want to use icon/svg instead of text, go to https://lucide.dev/icons/ or https://heroicons.com/
       2. Align the button to right side. (2')
       3. Once clicking any edit button, the user should be redirected to editForm.php page along with the task information (content and status). (10')
       tip: 
+      4. When deleting a task, submit the task id to doDelete.php, like http://php82.local:9000/doDelete.php?id=xxxxxx
+      For deleting handling, go to doDelete.php to see coding tasks.
       Leverage each task id; Use URL query parameters - https://www.semrush.com/blog/url-parameters/#what-are-url-parameters to pass the ID for editing form.
       
-      Find next task (task 2) in editForm.php
+      Find next coding task (task 2) in editForm.php
       */
       if ($isTasksEmpty) {
         echo "The task file may not exist, or no tasks were found.";

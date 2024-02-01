@@ -3,3 +3,4 @@
 65bbbbb72bbfd|Find the lost city of Atlantis.|done
 65bbbbb72bbfe|Write a novel in an alien language.|in progress
 65bbbbb72bbff|Create a time machine and attend a dinosaur party.|new
+65bbd1126c78a|Learning JS|new

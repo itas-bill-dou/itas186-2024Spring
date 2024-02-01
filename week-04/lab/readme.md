@@ -1,4 +1,4 @@
-# Lab 04: PHP Task List (Updating)
+# Lab 04: PHP Task List (Updating & Deletion)
 
 ## Submission and deadline
 
