@@ -31,7 +31,7 @@ Add following
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Configure Xdebug
-COPY docker/xdebug.ini /usr/local/etc/php/conf.d/
+COPY xdebug.ini /usr/local/etc/php/conf.d/
 ```
 
 after
@@ -56,7 +56,7 @@ In root directory
 MacOS:
 
 ```shell
-docker run -d --rm -p 9000:80 -v $(pwd):/var/www/html --name php82_apache_container php82-apache
+docker run -d --rm -p 9000:80 -v $(pwd):/var/www/html --name php82_xdebug_apache_container php82-xdebug-apache
 ```
 
 Windows:
@@ -64,13 +64,13 @@ Windows:
 CMD
 
 ```
-docker run -d --rm -p 9000:80 -v %cd%:/var/www/html --name php82_apache_container php82-apache
+docker run -d --rm -p 9000:80 -v %cd%:/var/www/html --name php82_xdebug_apache_container php82-xdebug-apache
 ```
 
 Powershell:
 
 ```
-docker run -d --rm -p 9000:80 -v ${PWD}:/var/www/html --name php82_apache_container php82-apache
+docker run -d --rm -p 9000:80 -v ${PWD}:/var/www/html --name php82_xdebug_apache_container php82-xdebug-apache
 ```
 
 ## Verify the xdebug is installed
