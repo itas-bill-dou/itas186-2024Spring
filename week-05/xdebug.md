@@ -103,10 +103,6 @@ Clear up all content and paste following:
     ]
 }
 ```
-
-```json
-"php.debug.executablePath": "C:\xampp\php\php.exe"
-```
 3. It's time to use xdebug.
 
     1. Create a test.php file in the root directory and add the following code:
