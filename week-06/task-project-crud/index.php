@@ -12,27 +12,23 @@ Total: 90'
 // Create a flag variable to check if tasks are empty. Assuming it is empty for now.
 $isTasksEmpty = true;
 
-if (file_exists("./task-list.txt")) {
-    $tasks_string = file_get_contents('./task-list.txt');
-    $raw_tasks = explode(PHP_EOL, trim($tasks_string));
+$pdo = require_once 'database.php';
 
-    $normalizedTasks = [];
+// Create a flag variable to check if tasks are empty. Assuming it is empty for now.
+$isTasksEmpty = true;
 
-    // Only loop non-empty raw tasks
-    if (!empty($raw_tasks)) {
-        // Mark it as false now that raw tasks are not empty
-        $isTasksEmpty = false;
+// Prepare a SELECT statement
+$sql = "SELECT * FROM tasks";
+$stmt = $pdo->prepare($sql);
 
-        // Normalize all tasks
-        foreach ($raw_tasks as $task) {
-            list($id, $content, $status) = explode('|', $task, 3);
-            $normalizedTasks[] = array(
-                "id" => $id,
-                "content" => $content,
-                "status" => $status
-            );
-        }
-    }
+// Execute the statement
+$stmt->execute();
+
+// Fetch all rows from the executed statement
+$normalizedTasks = $stmt->fetchAll();
+
+if (count($normalizedTasks) > 0) {
+    $isTasksEmpty = false;
 }
 
 ?>
