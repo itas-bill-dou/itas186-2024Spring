@@ -12,7 +12,6 @@ services:
       - ./data_mysql:/var/lib/mysql
   web:
     build: .
-    image: web
     depends_on:
       - mysql
     volumes:
