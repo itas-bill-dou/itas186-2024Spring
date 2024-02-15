@@ -86,7 +86,7 @@ if (count($normalizedTasks) > 0) {
 
                         if ($normalizedTaskStatus === $normalizedStatus) {
                             echo '<li class="my-2 flex justify-between items-center text-' . $color . '">';
-                            echo htmlspecialchars($task['content']);
+                            echo htmlspecialchars($task['description']);
 
                             if (trim(strtolower($task['status'])) !== 'done') {
                                 // 2. Align the button to the right side.
