@@ -1,5 +1,8 @@
 <?php
+include_once 'flashMessage.php';
 $pdo = require_once 'database.php';
+
+showMessage();
 
 // Create a flag variable to check if tasks are empty. Assuming it is empty for now.
 $isTasksEmpty = true;
@@ -36,7 +39,7 @@ if (count($normalizedTasks) > 0) {
     <div class="max-w-[600px] mx-auto mt-10 bg-white shadow p-4 rounded">
         <div class="flex justify-between">
             <h1 class="text-xl font-bold">PHP Task List</h1>
-            <a href="createForm.html" class="text-blue-500">Create</a>
+            <a href="createForm.php" class="text-blue-500">Create</a>
         </div>
 
         <div class="my-4">

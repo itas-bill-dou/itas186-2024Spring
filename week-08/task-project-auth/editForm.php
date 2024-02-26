@@ -20,12 +20,12 @@ task 2 (35' total):
 */
 
 // Task 1: Grab the task id from URL
-$taskId = isset($_GET['id']) ? $_GET['id'] : '';
+$taskId = isset($_GET['id']) && is_numeric($_GET['id']) ? $_GET['id'] : false;
 
 if (!$taskId) {
   // Part of Task 4: Display error message and link
-  echo "<p class='text-red-500'>No task ID provided.</p>";
-  echo "<a href='index.php' class='text-blue-500'>Go back to task list</a>";
+  $_SESSION['message'] = 'Invalid task ID provided.';
+  header('Location: index.php');
   exit;
 }
 
@@ -42,9 +42,8 @@ if (!empty($result)) {
   $taskContent = $result["description"];
   $taskStatus = $result["status"];
 } else {
-  // If the task is not found, display an error message and link
-  echo "<p class='text-red-500'>Task not found.</p>";
-  echo "<a href='index.php' class='text-blue-500'>Go back to task list</a>";
+  $_SESSION['message'] = 'Task not found';
+  header('Location: index.php');
   exit;
 }
 

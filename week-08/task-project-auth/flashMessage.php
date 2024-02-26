@@ -14,7 +14,6 @@ function clearMessage()
 
 function showMessage($type = "info")
 {
-  session_start(); // Ensure session is started if not already
 
   switch ($type) {
     case 'success':

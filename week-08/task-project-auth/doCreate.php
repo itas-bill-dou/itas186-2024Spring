@@ -1,7 +1,5 @@
 <?php
-
-session_start();
-
+include 'flashMessage.php';
 $pdo = require_once 'database.php';
 
 $validStatuses = ['new', 'in progress', 'done'];
@@ -14,9 +12,8 @@ if (!empty($_POST)) {
   $status = !empty(trim($_POST['status'])) ? trim($_POST['status']) :  '';
 
   if (!in_array($status, $validStatuses)) {
-    // Set up the flash message with message
-    $_SESSION['message'] = 'Your operation was successful.';
-    header('Location: createForm.html');
+    setMessage('Invalid Status');
+    header('Location: createForm.php');
     exit;
   }
 
@@ -28,12 +25,15 @@ if (!empty($_POST)) {
 
     $stmt->execute();
 
+    setMessage('The new task is created successfully.');
     header('Location: index.php');
+    exit;
   } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
     exit;
   }
 } else {
-  header('Location: createForm.html');
+  setMessage('No Task Is Posted.');
+  header('Location: createForm.php');
   exit;
 }

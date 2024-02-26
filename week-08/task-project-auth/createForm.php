@@ -1,3 +1,7 @@
+<?php
+include 'flashMessage.php';
+showMessage();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
